@@ -1,5 +1,4 @@
 ﻿using ParkAssist.Models;
-using ParkAssist.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +9,10 @@ namespace ParkAssist.Controllers
 {
     public class HomeController : Controller
     {
-        private CustomerService objCust;
+        private FlightManager _flightManager;
         public HomeController()
         {
-            this.objCust = new CustomerService();
+            _flightManager = new FlightManager(new Repository());
         }
 
         // GET: Home
@@ -30,7 +29,7 @@ namespace ParkAssist.Controllers
             try
             {
                 object[] parameters = { Count };
-                customers = objCust.GetAll(parameters);
+                customers = _flightManager.GetReservations();
             }
             catch { }
             return Json(customers.ToList(), JsonRequestBehavior.AllowGet);
@@ -44,7 +43,7 @@ namespace ParkAssist.Controllers
             try
             {
                 object[] parameters = { id };
-                customer = this.objCust.GetbyID(parameters);
+                customer = _flightManager.GetReservations();
             }
             catch { }
             return Json(customer, JsonRequestBehavior.AllowGet);
@@ -57,15 +56,14 @@ namespace ParkAssist.Controllers
 
         // POST: Save New Customer
         [HttpPost]
-        public JsonResult Insert(Customer model)
+        public JsonResult Insert(Reservation model)
         {
             int result = 0; bool status = false;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    object[] parameters = { model.CustName, model.CustEmail };
-                    result = objCust.Insert(parameters);
+                    _flightManager.AddReservation(model.GateID, model.FlightID, model.Arrival, model.Departure, model.Destination, false);
                     if (result == 1)
                     {
                         status = true;
@@ -86,52 +84,52 @@ namespace ParkAssist.Controllers
             return View();
         }
 
-        // POST: Update Existing Customer
-        [HttpPost]
-        public JsonResult Update(Customer model)
-        {
-            int result = 0; bool status = false;
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    object[] parameters = { model.Id, model.CustName, model.CustEmail };
-                    result = objCust.Update(parameters);
-                    if (result == 1)
-                    {
-                        status = true;
-                    }
-                    return Json(new { success = status });
-                }
-                catch { }
-            }
-            return Json(new
-            {
-                success = false,
-                errors = ModelState.Keys.SelectMany(i => ModelState[i].Errors).Select(m => m.ErrorMessage).ToArray()
-            });
-        }
+        //// POST: Update Existing Customer
+        //[HttpPost]
+        //public JsonResult Update(Customer model)
+        //{
+        //    int result = 0; bool status = false;
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            object[] parameters = { model.Id, model.CustName, model.CustEmail };
+        //            result = objCust.Update(parameters);
+        //            if (result == 1)
+        //            {
+        //                status = true;
+        //            }
+        //            return Json(new { success = status });
+        //        }
+        //        catch { }
+        //    }
+        //    return Json(new
+        //    {
+        //        success = false,
+        //        errors = ModelState.Keys.SelectMany(i => ModelState[i].Errors).Select(m => m.ErrorMessage).ToArray()
+        //    });
+        //}
 
-        // DELETE: Delete Customer
-        [HttpDelete]
-        public JsonResult Delete(int id)
-        {
-            int result = 0; bool status = false;
-            try
-            {
-                object[] parameters = { id };
-                result = objCust.Delete(parameters);
-                if (result == 1)
-                {
-                    status = true;
-                }
-            }
-            catch { }
-            return Json(new
-            {
-                success = status
-            });
-        }
+        //// DELETE: Delete Customer
+        //[HttpDelete]
+        //public JsonResult Delete(int id)
+        //{
+        //    int result = 0; bool status = false;
+        //    try
+        //    {
+        //        object[] parameters = { id };
+        //        result = objCust.Delete(parameters);
+        //        if (result == 1)
+        //        {
+        //            status = true;
+        //        }
+        //    }
+        //    catch { }
+        //    return Json(new
+        //    {
+        //        success = status
+        //    });
+        //}
 
         protected override void Dispose(bool disposing)
         {

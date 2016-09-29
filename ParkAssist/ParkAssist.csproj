@@ -121,17 +121,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\CRUD_Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CRUD_Model.edmx</DependentUpon>
-      <LastGenOutput>CRUD_Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\CRUD_Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CRUD_Model.edmx</DependentUpon>
-      <LastGenOutput>CRUD_Model.cs</LastGenOutput>
-    </Content>
     <Content Include="ScriptsNg\CustomerController.js" />
+    <Content Include="ScriptsNg\Services\bookings.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -152,28 +143,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\apiHomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\Repository\BaseRepository\GenericRepository.cs" />
-    <Compile Include="Data\Repository\Interface\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CRUD_Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRUD_Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CRUD_Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRUD_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CRUD_Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRUD_Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Customer.cs">
-      <DependentUpon>CRUD_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Flight.cs" />
     <Compile Include="Models\FlightManager.cs" />
@@ -182,18 +153,10 @@
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\CustomerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\CRUD_Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CRUD_Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CRUD_Model.edmx.diagram">
-      <DependentUpon>CRUD_Model.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
