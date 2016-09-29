@@ -18,6 +18,9 @@ namespace ParkAssist.Models
 
         private void SeedData()
         {
+            _flights.Clear();
+            _gates.Clear();
+            _reservations.Clear();
             for (int i = 1; i < 20; i++)
             {
                 _flights.Add(new Flight { ID = i, AirLine = "Quantas", Name = "QN" + i.ToString() });
