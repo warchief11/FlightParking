@@ -25,7 +25,7 @@ namespace ParkAssist.Test
 
             //assert
             Assert.IsTrue(reservations.Count > 0);
-            Assert.IsTrue(reservations.All(x => x.GateID == 2));
+            Assert.IsTrue(reservations.All(x => x.GateId == 2));
         }
 
 
@@ -40,7 +40,7 @@ namespace ParkAssist.Test
 
             //assert
             Assert.IsNotNull(reservation);
-            Assert.IsTrue(_repo.Reservations.Any(item => item.ID == reservation.ID));
+            Assert.IsTrue(_repo.Reservations.Any(item => item.Id == reservation.Id));
         }
 
         [Test]
@@ -101,7 +101,7 @@ namespace ParkAssist.Test
             flightManager.DeleteReservation(reservation);
 
             //assert
-            Assert.IsFalse(_repo.Reservations.Any(x => x.ID == reservation.ID));
+            Assert.IsFalse(_repo.Reservations.Any(x => x.Id == reservation.Id));
         }
 
         [Test]
@@ -112,12 +112,12 @@ namespace ParkAssist.Test
             var reservation = flightManager.AddReservation(2, 101, DateTime.Today.AddHours(7.5), destination: "Melbourne");
 
             //act
-             reservation.GateID = 3;
+             reservation.GateId = 3;
             flightManager.UpdateReservation(reservation);
 
             //assert
-            Assert.IsTrue(flightManager.GetReservations(3).Any(x => x.ID == reservation.ID));
-            Assert.IsFalse(flightManager.GetReservations(2).Any(x => x.ID == reservation.ID));
+            Assert.IsTrue(flightManager.GetReservations(3).Any(x => x.Id == reservation.Id));
+            Assert.IsFalse(flightManager.GetReservations(2).Any(x => x.Id == reservation.Id));
         }
 
         [Test]

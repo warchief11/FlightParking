@@ -7,7 +7,7 @@ namespace ParkAssist.Models
 {
     public class Flight
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public string AirLine { get; set; }
 

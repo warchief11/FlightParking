@@ -15,8 +15,8 @@ namespace ParkAssist.Models
 
         public List<Reservation> GetReservations(int? gateId = null, int? flightID = null)
         {
-            return _repo.Reservations.Where(r => (!gateId.HasValue || gateId.Value == r.GateID)
-                                           && (!flightID.HasValue || flightID.Value == r.FlightID))
+            return _repo.Reservations.Where(r => (!gateId.HasValue || gateId.Value == r.GateId)
+                                           && (!flightID.HasValue || flightID.Value == r.FlightId))
                               .ToList();
         }
 
@@ -36,7 +36,7 @@ namespace ParkAssist.Models
                 }
                 else
                 {
-                    throw new ArgumentException(string.Format("Cannot reserve at Gate {0} at this time duration as there is an conflicting reseravation.", reservation.GateID));
+                    throw new ArgumentException(string.Format("Cannot reserve at Gate {0} at this time duration as there is an conflicting reseravation.", reservation.GateId));
                 }
             }
             _repo.Reservations.Add(reservation);
@@ -49,9 +49,9 @@ namespace ParkAssist.Models
             var reservation = new Reservation 
                                             {
                                                 //ignoring thread saftery for simplistic scneario. In complex scenario, DB will create identity primary key.
-                                                ID = _repo.Reservations.Count() + 1, 
-                                                GateID = gateId,
-                                                FlightID =flightID,
+                                                Id = _repo.Reservations.Count() + 1, 
+                                                GateId = gateId,
+                                                FlightId =flightID,
                                                 Arrival = arrivalTime,
                                                 Departure = departure.Value,
                                                 Destination = destination,
@@ -101,8 +101,8 @@ namespace ParkAssist.Models
 
         private Reservation GetOverlappingReservation(List<Reservation> reservations, Reservation reservation)
         {
-            return reservations.FirstOrDefault(r => r.GateID == reservation.GateID
-                                     && r.ID != reservation.ID
+            return reservations.FirstOrDefault(r => r.GateId == reservation.GateId
+                                     && r.Id != reservation.Id
                                      && r.Arrival <= reservation.Departure
                                      && r.Departure >= reservation.Arrival);
         }

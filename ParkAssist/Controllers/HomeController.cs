@@ -63,7 +63,7 @@ namespace ParkAssist.Controllers
             {
                 try
                 {
-                    _flightManager.AddReservation(model.GateID, model.FlightID, model.Arrival, model.Departure, model.Destination, false);
+                    _flightManager.AddReservation(model.GateId, model.FlightId, model.Arrival, model.Departure, model.Destination, false);
                     if (result == 1)
                     {
                         status = true;

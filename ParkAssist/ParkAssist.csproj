@@ -122,7 +122,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ScriptsNg\CustomerController.js" />
-    <Content Include="ScriptsNg\Services\bookings.js" />
+    <Content Include="ScriptsNg\flightParkModule.js" />
+    <Content Include="ScriptsNg\GatesDashboardCtrl.js" />
+    <Content Include="ScriptsNg\Services\Booking.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -173,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ScriptsNg\pages\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -23,16 +23,16 @@ namespace ParkAssist.Models
             _reservations.Clear();
             for (int i = 1; i < 20; i++)
             {
-                _flights.Add(new Flight { ID = i, AirLine = "Quantas", Name = "QN" + i.ToString() });
-                _flights.Add(new Flight { ID = i + 20, AirLine = "Virgin Australia", Name = "VA" + (i + 20).ToString() });
-                _flights.Add(new Flight { ID = i + 40, AirLine = "Cathay Pacific", Name = "CP" + (i + 40).ToString() });
+                _flights.Add(new Flight { Id = i, AirLine = "Quantas", Name = "QN" + i.ToString() });
+                _flights.Add(new Flight { Id = i + 20, AirLine = "Virgin Australia", Name = "VA" + (i + 20).ToString() });
+                _flights.Add(new Flight { Id = i + 40, AirLine = "Cathay Pacific", Name = "CP" + (i + 40).ToString() });
 
-                _gates.Add(new Gate { ID = 1, Name = i.ToString() });
+                _gates.Add(new Gate { Id = 1, Name = i.ToString() });
 
             }
-            _reservations.Add(new Reservation { ID = 1, GateID = 2, FlightID = 1, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(6), Destination = "AuckLand" });
-            _reservations.Add(new Reservation { ID = 2, GateID = 3, FlightID = 5, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(5.5), Destination = "Canberra" });
-            _reservations.Add(new Reservation { ID = 3, GateID = 3, FlightID = 4, Arrival = DateTime.Today.AddHours(5.5), Departure = DateTime.Today.AddHours(6), Destination = "Melbourne" });
+            _reservations.Add(new Reservation { Id = 1, GateId = 2, FlightId = 1, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(6), Destination = "AuckLand" });
+            _reservations.Add(new Reservation { Id = 2, GateId = 3, FlightId = 5, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(5.5), Destination = "Canberra" });
+            _reservations.Add(new Reservation { Id = 3, GateId = 3, FlightId = 4, Arrival = DateTime.Today.AddHours(5.5), Departure = DateTime.Today.AddHours(6), Destination = "Melbourne" });
 
         }
         public List<Flight> Flights

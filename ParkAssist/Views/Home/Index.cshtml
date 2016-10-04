@@ -51,8 +51,16 @@
         </tr>
     </table>
 </div>
+<div ng-controller="GatesDashboardCtrl">
+    <select>
+        <option ng-repeat="gate in gates">{{gate.Name}}</option>
+    </select>
+</div>
 
 @section JavaScript{
     <script src="~/Scripts/angular.js"></script>
-    <script src="~/ScriptsNg/CustomerController.js"></script>
+<script src="~/ScriptsNg/CustomerController.js"></script>
+<script src="~/ScriptsNg/flightParkModule.js"></script>
+<script src="~/ScriptsNg/GatesDashboardCtrl.js"></script>
+    <script src="~/ScriptsNg/Services/Booking.js"></script>
 }
