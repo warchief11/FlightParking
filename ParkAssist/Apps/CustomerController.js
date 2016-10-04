@@ -1,3 +1,4 @@
+﻿angular.module('flightParking', [])
 .controller('CustomerController', function ($scope, $http, $location, $window) {
     $scope.custModel = {};
     $scope.message = '';
