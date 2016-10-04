@@ -1,4 +1,3 @@
-﻿angular.module('myFormApp', [])
 .controller('CustomerController', function ($scope, $http, $location, $window) {
     $scope.custModel = {};
     $scope.message = '';

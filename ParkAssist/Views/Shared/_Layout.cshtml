@@ -10,7 +10,7 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <base href="/">
 </head>
-<body ng-app="myFormApp" class="ng-cloak">
+<body ng-app="flightParking" class="ng-cloak">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -34,9 +34,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    @RenderSection("JavaScript", false)
+    @System.Web.Optimization.Scripts.Render("~/bundles/vendor");
+    @System.Web.Optimization.Scripts.Render("~/bundles/custom");   
 </body>
 </html>

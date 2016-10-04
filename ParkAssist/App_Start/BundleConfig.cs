@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 
-namespace Emix.Web
+namespace ParkAssist
 {
     public class BundleConfig
     {
@@ -12,24 +12,12 @@ namespace Emix.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/vendor")
-#if DEBUG
-.IncludeDirectory("~/Scripts/Vendor_dev/Ring0", "*.js", true)
-                .IncludeDirectory("~/Scripts/Vendor_dev/Ring1", "*.js", true)
-                .IncludeDirectory("~/Scripts/Vendor_dev/Ring2", "*.js", true)
-                .IncludeDirectory("~/Scripts/Vendor_dev/Ring3", "*.js", true)
-#else
-                .IncludeDirectory("~/Scripts/Vendor/Ring0", "*.js", true)
-                .IncludeDirectory("~/Scripts/Vendor/Ring1", "*.js", true)
-                .IncludeDirectory("~/Scripts/Vendor/Ring2", "*.js", true)
-                .IncludeDirectory("~/Scripts/Vendor/Ring3", "*.js", true)
-#endif
-.IncludeDirectory("~/Scripts/Custom", "*.js", true)
-.IncludeDirectory("~/ScriptsNg", "*.js", true)
-                );
+                   .IncludeDirectory("~/Scripts/", "*.js", true));
 
-            bundles.Add(new ScriptBundle("~/bundles/emixApp")
-                .IncludeDirectory("~/ngApp", "*.js", true)
-                );
+            bundles.Add(new ScriptBundle("~/bundles/custom")
+                .IncludeDirectory("~/Apps/", "*.js", true)
+                .IncludeDirectory("~/Apps/Services", "*.js", true)
+                .IncludeDirectory("~/Apps/pages", "*.js", true));
 
 
             bundles.Add(new StyleBundle("~/Content/Styles/css")

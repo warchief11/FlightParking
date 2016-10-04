@@ -1,0 +1,24 @@
+﻿<div ng-controller="ReservationCtrl">
+    <table st-table="reservations" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Gate</th>
+                <th>Flight</th>
+                <th>Destination</th>
+                <th>Arrival</th>
+                <th>Departure</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="reservation in reservations">
+                <td>{{reservation.gateName}}</td>
+                <td>{{reservation.flightName}}</td>
+                <td>{{reservation.destination}}</td>
+                <td>{{reservation.arrival | date:'shortTime'}}</td>
+                <td>{{reservation.departure | date:'shortTime'}}</td>
+                <td>{{reservation.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -10,12 +10,15 @@
    var isGatesLoaded = false;
 
    var getGates = function () {
+
+       var gates = [{ Id: 1, Name: "1" }, { Id: 2, Name: "2" }, { Id: 3, Name: "2A" }];
+       isGatesLoaded = true;
        if(isGatesLoaded){
            return $q.when(gates);
        }
        else
        {
-           return [{ Id: 1, Name: "1" }, { Id: 2, Name: "2" }];
+           
            $http.getGates().then(function (response) {
                
                gates = response.Data;
@@ -25,7 +28,7 @@
        }
    };
    return {
-       getReservations: getReservations(),
-       getGates: getGates()
+       getReservations: getReservations,
+       getGates: getGates
    };
 }])
