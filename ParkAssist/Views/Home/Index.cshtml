@@ -4,7 +4,34 @@
 }
 
 <h2>Create Customer</h2>
-
+<div ui-view class="container slide" style="padding-top: 80px;"></div>
+@*<div ng-controller="GatesDashboardCtrl">
+    <select>
+        <option ng-repeat="gate in gates">{{gate.Name}}</option>
+    </select><br>
+    <table st-table="reservations" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Gate</th>
+                <th>Flight</th>
+                <th>Destination</th>
+                <th>Arrival</th>
+                <th>Departure</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="reservation in reservations">
+                <td>{{reservation.gateId}}</td>
+                <td>{{reservation.flightName}}</td>
+                <td>{{reservation.destination}}</td>
+                <td>{{reservation.arrival | date:'shortTime'}}</td>
+                <td>{{reservation.departure | date:'shortTime'}}</td>
+                <td>{{reservation.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>*@
 @*<div id="content" ng-controller="CustomerController">
     <span ng-show="isViewLoading" class="viewLoading">
         <img src="~/Content/images/ng-loader.gif" /> loading...
@@ -51,8 +78,3 @@
         </tr>
     </table>
 </div>*@
-<div ng-controller="GatesDashboardCtrl">
-    <select >
-    <option ng-repeat="gate in gates">{{gate.Name}}</option>
-        </select><br>
-</div>

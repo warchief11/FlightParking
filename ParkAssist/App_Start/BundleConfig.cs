@@ -12,12 +12,18 @@ namespace ParkAssist
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/vendor")
-                   .IncludeDirectory("~/Scripts/", "*.js", true));
+                   .Include("~/Scripts/jquery-1.10.2.min.js")
+                   .Include("~/Scripts/bootstrap.min.js")
+                   .Include("~/Scripts/angular.min.js")
+                   .Include("~/Scripts/smart-table.min.js")
+                   .Include("~/Scripts/AngularUI/ui-router.min.js")
+                   );
 
             bundles.Add(new ScriptBundle("~/bundles/custom")
                 .IncludeDirectory("~/Apps/", "*.js", true)
-                .IncludeDirectory("~/Apps/Services", "*.js", true)
-                .IncludeDirectory("~/Apps/pages", "*.js", true));
+                .IncludeDirectory("~/Apps/services", "*.js", true)
+                .IncludeDirectory("~/Apps/controllers", "*.js", true)
+                .IncludeDirectory("~/Apps/templates", "*.js", true));
 
 
             bundles.Add(new StyleBundle("~/Content/Styles/css")

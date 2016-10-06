@@ -2,14 +2,14 @@
    'use strict';
 
    var getReservations = function (gateId) {
-       var reservations = [{ Id: 1, gateId: 1, flightId: 1 }, { Id: 2, gateId: 1, flightId: 2 }]
+       var reservations = [{ Id: 1, gateId: 1 , gateName: "1A", flightId: 1 }, { Id: 2, gateId: 1, flightId: 2 }]
        return $q.when(reservations);
    };
 
    var gates = null;
    var isGatesLoaded = false;
 
-   var getGates = function () {
+   var getGates = function () { 
 
        var gates = [{ Id: 1, Name: "1" }, { Id: 2, Name: "2" }, { Id: 3, Name: "2A" }];
        isGatesLoaded = true;

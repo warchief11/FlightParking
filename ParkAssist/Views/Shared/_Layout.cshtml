@@ -20,6 +20,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Angular Application", "Index", "Home", new { area = ""}, new { @class = "navbar-brand", @target = "_self" })
+                <a class="navbar-brand" ui-sref="home">Home2</a>
+                <a class="navbar-brand" ui-sref="about">About</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav"></ul>
@@ -28,7 +30,8 @@
     </div>
 
     <div class="container body-content">
-        @RenderBody()
+           @RenderBody()
+       
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

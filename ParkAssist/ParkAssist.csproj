@@ -126,7 +126,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apps\controllers\ReservationsCtrl.js" />
-    <Content Include="Apps\directives\Reservations.html" />
+    <Content Include="Apps\templates\about.html" />
+    <Content Include="Apps\templates\reservations.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CRUDStyleSheet.css" />
@@ -139,12 +140,14 @@
     <Content Include="Apps\CustomerController.js" />
     <Content Include="Apps\flightParkModule.js" />
     <Content Include="Apps\controllers\GatesDashboardCtrl.js" />
-    <Content Include="Apps\Services\Booking.js" />
+    <Content Include="Apps\Services\Parking.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularUI\ui-router.js" />
+    <Content Include="Scripts\AngularUI\ui-router.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -193,7 +196,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Apps\pages\" />
+    <Folder Include="Apps\directives\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
