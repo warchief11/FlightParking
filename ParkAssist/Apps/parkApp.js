@@ -8,8 +8,8 @@
         $stateProvider
              .state("home", {
                  url: "/",
-                 templateUrl: 'Apps/templates/reservations.html',
-                 controller : 'GatesDashboardCtrl'
+                 templateUrl: 'Apps/templates/dashboard.html',
+                 controller: 'DashboardCtrl'
              })
             .state('about', {
                 url: '/about',
