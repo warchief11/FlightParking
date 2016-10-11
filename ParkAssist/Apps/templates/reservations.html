@@ -1,4 +1,5 @@
-﻿<div ng-controller="ReservationCtrl">
+﻿<div>
+    <p>{{gateId}}</p>
     <table st-table="reservations" class="table table-striped">
         <thead>
             <tr>
@@ -12,7 +13,7 @@
         </thead>
         <tbody>
             <tr ng-repeat="reservation in reservations">
-                <td>{{reservation.gateName}}</td>
+                <td>{{reservation.gateId}}</td>
                 <td>{{reservation.flightName}}</td>
                 <td>{{reservation.destination}}</td>
                 <td>{{reservation.arrival | date:'shortTime'}}</td>

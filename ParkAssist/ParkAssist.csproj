@@ -138,7 +138,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Apps\CustomerController.js" />
-    <Content Include="Apps\flightParkModule.js" />
+    <Content Include="Apps\parkApp.js" />
     <Content Include="Apps\controllers\GatesDashboardCtrl.js" />
     <Content Include="Apps\Services\Parking.js" />
     <Content Include="Scripts\angular-mocks.js" />

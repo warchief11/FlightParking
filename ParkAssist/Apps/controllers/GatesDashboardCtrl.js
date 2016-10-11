@@ -1,9 +1,7 @@
 ﻿/// <reference path="flightParkModule.js" />
-angular.module('flightParking', [])
+angular.module('parkApp')
     .controller('GatesDashboardCtrl', ['$scope', 'Parking', function ($scope, Parking) {
-        var reservations;
-        $scope.reservations = [{ Id: 1, gateId: 1, flightId: 1 }, { Id: 2, gateId: 1, flightId: 2 }];
-        $scope.gateId = 1;
+        $scope.gateId = 4;
         Parking.getGates().then(function (gates) {
             $scope.gates = gates;
         });
