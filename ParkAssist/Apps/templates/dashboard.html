@@ -1,7 +1,6 @@
 ﻿<div>
     <h1>Gates - Dashboard</h1>
-    {{gates[0]}}
-    <select ng-model="selectedGate">
-        <ng-options ="gate.Id gate in gates"></ng-options>
-    </select>
+    {{selectedGate}}
+    <select ng-model="selectedGate" ng-options="gate as gate.Name for gate in gates track by gate.Id"/>
+    <pa-flight-chart reservations="reservations"></pa-flight-chart>
 </div>

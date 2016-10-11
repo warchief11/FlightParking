@@ -6,10 +6,21 @@
     app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
-             .state("home", {
+             .state("dashboard", {
                  url: "/",
                  templateUrl: 'Apps/templates/dashboard.html',
                  controller: 'DashboardCtrl'
+                 //resolve: {
+                 //    Parking: ['Parking',
+                 //      function (parking) {
+                 //          return parking.all();
+                 //      }]
+                 //}
+             })
+             .state("dashboard.reservations", {
+                 url: "/",
+                 templateUrl: 'Apps/templates/reservations.html',
+                 controller: 'ReservationsCtrl'
              })
             .state('about', {
                 url: '/about',

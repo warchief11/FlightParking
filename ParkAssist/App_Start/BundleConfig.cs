@@ -23,6 +23,7 @@ namespace ParkAssist
                 .IncludeDirectory("~/Apps/", "*.js", true)
                 .IncludeDirectory("~/Apps/services", "*.js", true)
                 .IncludeDirectory("~/Apps/controllers", "*.js", true)
+                .IncludeDirectory("~/Apps/directives", "*.js", true)
                 .IncludeDirectory("~/Apps/templates", "*.js", true));
 
 
