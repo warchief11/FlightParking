@@ -1,20 +1,7 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Create Customer</h2>
-<div class="container slide" style="padding-top: 80px;"></div>
-
-@*<div id="content" ng-controller="CustomerController">
-    <span ng-show="isViewLoading" class="viewLoading">
-        <img src="~/Content/images/ng-loader.gif" /> loading...
-    </span>
-    <div ng-class="result">{{message}}</div>
-    <hr />
-    <form name="frmCustomer" novalidate>
+﻿<div>
+    <form name="frmGateBooking" novalidate>
         <div>
-            <input type="hidden" ng-model="custModel.Id" name="cid" />
+            <input type="hidden" ng-model="vm.reservation.Id" name="cid" />
         </div>
         <div>
             <label for="email">Customer Name</label>
@@ -34,21 +21,4 @@
             <input type="submit" value="Update" ng-click="updateCustomer()" ng-disabled="frmCustomer.$invalid">
         </div>
     </form>
-    <hr />
-
-    <h2>All Customers</h2>
-    <table class="table table-striped">
-        <tr ng-repeat="custModel in ListCustomer">
-            <td>{{custModel.Id}}</td>
-            <td>{{custModel.CustName}}</td>
-            <td>{{custModel.CustEmail}}</td>
-            <td>
-                <a href="#" ng-click="getCustomer(custModel)" title="Edit Record">
-                    <img src="~/Content/images/edit.png" />
-                </a><a href="#" ng-click="deleteCustomer(custModel)" title="Delete Record">
-                    <img src="~/Content/images/erase.png" />
-                </a>
-            </td>
-        </tr>
-    </table>
-</div>*@
+</div>

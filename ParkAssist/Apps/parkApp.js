@@ -9,7 +9,7 @@
              .state("dashboard", {
                  url: "/",
                  templateUrl: 'Apps/templates/dashboard.html',
-                 controller: 'DashboardCtrl'
+                 controller: 'DashboardCtrl as vm'
                  //resolve: {
                  //    Parking: ['Parking',
                  //      function (parking) {

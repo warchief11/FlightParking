@@ -1,11 +1,17 @@
 ﻿/// <reference path="flightParkModule.js" />
 angular.module('parkApp')
-    .controller('DashboardCtrl', ['$scope', 'Parking', function ($scope, Parking) {
-        Parking.getGates().then(function (gates) {
-            $scope.gates = gates;
-            $scope.selectedGate = 3;
-        });
-        Parking.getReservations($scope.gateId).then(function (reservations) {
-            $scope.reservations = reservations;
-        });
-    }]);
+    .controller('DashboardCtrl', DashboardCtrl);
+
+DashboardCtrl.$inject = ['$scope', 'Parking'];
+
+function DashboardCtrl($scope, Parking) {
+    var vm = this;
+    Parking.getGates().then(function (gates) {
+        vm.gates = gates;
+        vm.selectedGate = gates[0];
+    });
+    Parking.getReservations(vm.gateId).then(function (reservations) {
+        vm.reservations = reservations;
+    });
+    return vm;
+};
