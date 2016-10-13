@@ -27,12 +27,12 @@ namespace ParkAssist.Models
                 _flights.Add(new Flight { Id = i + 20, AirLine = "Virgin Australia", Name = "VA" + (i + 20).ToString() });
                 _flights.Add(new Flight { Id = i + 40, AirLine = "Cathay Pacific", Name = "CP" + (i + 40).ToString() });
 
-                _gates.Add(new Gate { Id = 1, Name = i.ToString() });
+                _gates.Add(new Gate { Id = i, Name =  "Gate-" + i.ToString() });
 
             }
-            _reservations.Add(new Reservation { Id = 1, GateId = 2, FlightId = 1, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(6), Destination = "AuckLand" });
-            _reservations.Add(new Reservation { Id = 2, GateId = 3, FlightId = 5, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(5.5), Destination = "Canberra" });
-            _reservations.Add(new Reservation { Id = 3, GateId = 3, FlightId = 4, Arrival = DateTime.Today.AddHours(5.5), Departure = DateTime.Today.AddHours(6), Destination = "Melbourne" });
+            _reservations.Add(new Reservation { Id = 1, GateId = 2, Gate = _gates.FirstOrDefault(g => g.Id == 2), Flight = _flights.FirstOrDefault(f => f.Id == 1), FlightId = 1, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(6), Destination = "AuckLand" });
+            _reservations.Add(new Reservation { Id = 2, GateId = 3, Gate = _gates.FirstOrDefault(g => g.Id == 3), Flight = _flights.FirstOrDefault(f => f.Id == 5), FlightId = 5, Arrival = DateTime.Today.AddHours(5), Departure = DateTime.Today.AddHours(5.5), Destination = "Canberra" });
+            _reservations.Add(new Reservation { Id = 3, GateId = 3, Gate = _gates.FirstOrDefault(g => g.Id == 3), Flight = _flights.FirstOrDefault(f => f.Id == 4), FlightId = 4, Arrival = DateTime.Today.AddHours(5.5), Departure = DateTime.Today.AddHours(6), Destination = "Melbourne" });
 
         }
         public List<Flight> Flights

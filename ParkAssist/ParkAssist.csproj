@@ -129,6 +129,7 @@
     <Content Include="Apps\directives\paFlightChart.js" />
     <Content Include="Apps\templates\about.html" />
     <Content Include="Apps\templates\dashboard.html" />
+    <Content Include="Apps\templates\gateBooking.html" />
     <Content Include="Apps\templates\paFlightChart.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -166,7 +167,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\api\apiHomeController.cs" />
+    <Compile Include="Controllers\api\ReservationsController.cs" />
+    <Compile Include="Controllers\api\GatesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

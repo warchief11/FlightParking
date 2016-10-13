@@ -13,6 +13,11 @@ namespace ParkAssist.Models
             _repo = repo;
         }
 
+        public List<Gate> GetGates()
+        {
+            return _repo.Gates.ToList();
+        }
+
         public List<Reservation> GetReservations(int? gateId = null, int? flightID = null)
         {
             return _repo.Reservations.Where(r => (!gateId.HasValue || gateId.Value == r.GateId)
